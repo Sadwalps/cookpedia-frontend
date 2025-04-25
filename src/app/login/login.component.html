@@ -1,0 +1,18 @@
+<div class="container"
+    style="background-image: url(https://img.freepik.com/premium-photo/cooking-ingredient-white-table-background_826551-2554.jpg);  height: 570px; background-size: cover; background-repeat: no-repeat;">
+
+    <h2 class="text-center pt-5">Login</h2>
+    <p class="text-center">More than 100 plus Recipes from around the world</p>
+    <div class=" d-flex justify-content-center align-items-center mt-5 ">
+        <form action="" [formGroup]="loginForm" (ngSubmit)="login()">
+        <div class=" p-5 shadow  text-center rounded">
+            <h3 class="mt-2"><i class="fa-solid fa-graduation-cap me-2"></i>Cookpedia</h3>
+           <div> <input name="email" formControlName="email" type="email" class="form-control mt-3 mb-3" placeholder="E Mail"></div>
+           @if (loginForm.get("email")?.errors && loginForm.get("email")?.touched) {<div class="mb-3 text-danger">*Invalid Email</div>}
+           <div> <input  name="password" formControlName="password" type="text" class="form-control mb-3" placeholder="Password"></div>
+           @if (loginForm.get("password")?.errors && loginForm.get("password")?.touched){<div class="mb-3 text-danger">*Invalid Password</div>}
+            <button type="submit" class="btn btn-success form-control mt-3 mb-2">Login</button>
+        </div>
+        </form>
+    </div>
+</div>

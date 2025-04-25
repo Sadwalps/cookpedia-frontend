@@ -1,0 +1,79 @@
+<div class="container-fluid">
+    <div class="row">
+        @if (isSidebarOpen) {
+        <div class="col-lg-2">
+            <app-sidebar></app-sidebar>
+        </div>
+        }
+        <div class="col">
+            <div class="row bg-warning text-light p-3">
+                <div class="d-flex justify-content-between align-items-center">
+                    <h1><button (click)="menuBtnClick()" class="btn me-2"><i
+                                class="fa-solid fa-bars text-light fa-2x"></i></button>Welcome To Admin
+                        Dashboard</h1>
+                    <div class="dropdown">
+                        <button type="button" data-bs-toggle="dropdown" class="btn dropdown-toggle text-light"></button>
+                        <ul class="dropdown-menu text-center">
+                            <li><button (click)="logout()" class="btn ">Logout <i
+                                        class="fa-solid fa-right-from-bracket ms-2"></i></button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- metrics -->
+            <div class="d-flex justify-content-evenly my-3">
+                <!-- users -->
+                <div class="d-flex align-items-center p-3 rounded text-light bg-info">
+                    <i class="fa-solid fa-users fa-3x me-3"></i>
+                    <div>
+                        <h4>user</h4>
+                        <h3>{{userCount}}</h3>
+                    </div>
+                </div>
+
+                <!-- recipe -->
+                <div class="d-flex align-items-center p-3 rounded text-light bg-primary">
+                    <i class="fa-solid fa-users fa-3x me-3"></i>
+                    <div>
+                        <h4>Recipe</h4>
+                        <h3>{{recipeCount}}</h3>
+                    </div>
+                </div>
+
+                <!-- download -->
+                <div class="d-flex align-items-center p-3 rounded text-light bg-danger">
+                    <i class="fa-solid fa-users fa-3x me-3"></i>
+                    <div>
+                        <h4>Downloads</h4>
+                        <h3>{{downloadCount}}</h3>
+                    </div>
+                </div>
+
+                <!-- notification -->
+                <div class="d-flex align-items-center p-3 rounded text-light bg-secondary">
+                    <i class="fa-solid fa-users fa-3x me-3"></i>
+                    <div>
+                        <h4>Notifications</h4>
+                        <h6>You have <a routerLink="/admin/request-list">{{requestCount}}</a>new requests!</h6>
+                    </div>
+                </div>
+            </div>
+
+            <!-- chart -->
+            <div class="row">
+                <div class="col-lg-8">
+                    <highcharts-chart [Highcharts]="Highcharts" [options]="chartOptions"
+                        style="width: 100%; height: 400px; display: block;"></highcharts-chart>
+                </div>
+
+                <!-- date -->
+                <div class="col-lg-4 mb-3">
+                    <mat-card class="demo-inline-calendar-card">
+                        <mat-calendar [(selected)]="selected"></mat-calendar>
+                    </mat-card>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
