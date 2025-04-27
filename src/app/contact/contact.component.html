@@ -1,3 +1,4 @@
+<app-header></app-header>
 <div class="container ">
     <div class="row bg-success text-light">
         <div class="col-lg-2"></div>
@@ -68,8 +69,8 @@
             <form [formGroup]="testimonyForm" (ngSubmit)="addTestimony()">
                 <div class="p-lg-5 p-1 shadow w-100 text-center rounded ">
                     <h3 class="mt-2">Client Testimonial</h3>
-                    <input type="text" formControlName="name" class="form-control mt-5" placeholder="Name">
-                    <input type="email" formControlName="email" class="form-control mt-3" placeholder="E Mail">
+                    <input type="text" name="name" formControlName="name" class="form-control mt-5" placeholder="Name">
+                    <input type="email" name="email" formControlName="email" class="form-control mt-3" placeholder="E Mail">
                     <textarea name="message" formControlName="message" id="" class="form-control mt-3"
                         placeholder="Message"></textarea>
                     <p class="mt-3">By Submitting, your agreeing the terms and condition of our website. We may use your
@@ -86,3 +87,4 @@
     </div>
 
 </div>
+<app-footer></app-footer>

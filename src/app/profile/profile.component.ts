@@ -1,11 +1,13 @@
 import { Component } from '@angular/core';
 import { ApiService } from '../services/api.service';
 import { RouterLink } from '@angular/router';
+import { HeaderComponent } from "../header/header.component";
+import { FooterComponent } from "../footer/footer.component";
 
 @Component({
   selector: 'app-profile',
   standalone: true,
-  imports: [RouterLink],
+  imports: [RouterLink, HeaderComponent, FooterComponent],
   templateUrl: './profile.component.html',
   styleUrl: './profile.component.css'
 })
@@ -19,10 +21,10 @@ export class ProfileComponent {
   ngOnInit() {
     this.getUserDownloadRecipe()
 
-    const user = JSON.parse(sessionStorage.getItem("user")||"")
-    if(user.profilePic){
+    const user = JSON.parse(sessionStorage.getItem("user") || "")
+    if (user.profilePic) {
       this.profileimg = user.profilePic
-      
+
     }
   }
 
